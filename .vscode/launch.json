@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "PyTest",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+            "module": "pytest",
+            "args": [
+                "-sv",
+                "--disable-pytest-warnings",
+                "--html=report.html"
+            ],
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
