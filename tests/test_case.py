@@ -18,7 +18,7 @@ class ApiHttpbinPost(BaseApi):
 def test_httpbin_get():
     ApiHttpbinGet().run()\
         .validate("status_code",200)\
-        # .validate("headers.server","gunicorn/19.9.0")\
+        .validate("headers.server","gunicorn/19.9.0")\
         # .validate("json().url","https://httpbin.org/get")
 
 def test_httpbin_get_with_params():
