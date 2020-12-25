@@ -10,7 +10,7 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": false,
-            "pythonPath": "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+            "python": "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
             "module": "pytest",
             "args": [
                 "-sv",
