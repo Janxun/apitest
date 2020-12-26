@@ -24,7 +24,27 @@ def test_httpbin_post():
         .validate("status_code",200)\
         .validate("headers.server","gunicorn/19.9.0")\
         .validate("json().url","https://httpbin.org/post")\
+        .validate("json().headers.Accept",'application/json')\
+        .validate("json().json.abc", 456)
+
+def test_httpbin_parameters_share():
+    user_id = "adk129"
+    ApiHttpbinGet()\
+        .set_params(user_id =user_id)\
+        .run()\
+        .validate("status_code",200)\
+        .validate("headers.server","gunicorn/19.9.0")\
+        .validate("json().url","https://httpbin.org/get?user_id={}".format(user_id))\
         .validate("json().headers.Accept",'application/json')
+
+    ApiHttpbinPost()\
+        .set_json({"user_id": user_id})\
+        .run()\
+        .validate("status_code",200)\
+        .validate("headers.server","gunicorn/19.9.0")\
+        .validate("json().url","https://httpbin.org/post")\
+        .validate("json().headers.Accept",'application/json')\
+        .validate("json().json.user_id","adk129")
 
 
 
